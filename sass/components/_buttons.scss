@@ -1,0 +1,34 @@
+.btn {
+    padding: 1rem 3rem;
+    border-radius: 10rem;
+
+    text-transform: none;
+    outline: none;
+    border: none;
+    letter-spacing: .7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s;
+    width: 17rem;
+
+    @include respond(tab-port) { // width < 900px
+        padding: 1rem 1rem;
+    }
+
+    &:active {
+        transform: translateY(3px);
+    }
+
+    &__download {
+        fill: $color-secondary;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 1rem;
+    }
+}
+
+
+.btn-blue {
+    background-color: $color-display;
+    color: $color-white;
+}

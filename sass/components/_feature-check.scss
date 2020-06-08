@@ -1,0 +1,108 @@
+.feature-check {
+    padding-top: 5rem;
+    width: 15rem;
+    
+
+    &__heading {
+        font-family: $font-primary;
+        color: $color-display;
+        font-size: 1.4rem;
+        width: 100%;
+        border-bottom: 2px solid $color-pink;
+
+        position: relative;
+    }
+
+    &__text {
+        color: $color-grey;
+    }
+
+
+    // Выравниваем по правому краю
+    &--right {
+        justify-self: end;
+        display: grid; 
+        grid-auto-rows: min-content;
+        justify-items: right;
+    }
+
+    &--right > *{
+        text-align: right;
+    }
+
+/// Dashed pink line and marker
+/// Нюанс состоит в том, что придобавлении для dashed-line и marker свойства position: absolute; эти два элемента исчезают из общего потока документа и их как бы нет, поэтому родитель получает ширину равную нулю. Поэтому в transform-origin и translate мы используем не 100% (ширины родителя), а величину длины пунктирной линии dashed-line. Иначе съезжает
+    &__wrapper {
+        position: relative;
+        width: 100%;
+
+        @include respond(phone) { // width < 600px
+            display: none;
+        }
+
+        &--top-left {
+            transform-origin: 0 0;
+            transform: translate(100%, -2px) rotate(15deg);
+        }
+
+        &--top-right {
+            transform-origin: $dashed-line-length 0;
+            transform: translate(-$dashed-line-length, -2px) rotate(-15deg);
+        }
+
+        &--bottom-left {
+            transform-origin: 0 0;
+            transform: translate(100%, -2px) rotate(-15deg);
+        }
+
+        &--bottom-right {
+            transform-origin: $dashed-line-length 0;
+            transform: translate(-$dashed-line-length, -2px) rotate(15deg);
+        }
+    }
+
+    &__dashed-line {
+            height: 1px;
+            width: $dashed-line-length;
+            border-bottom: 2px dashed $color-pink;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    &__marker {
+        width: $marker-size;
+        height: $marker-size;
+        border-radius: 50%;
+        border: 2px solid $color-pink;
+        position: absolute;
+        background: radial-gradient(circle at center, $color-pink 0%, $color-pink 9%, transparent 20%, transparent 100%);
+
+        &--top-left {
+            top: -$half-marker-size;
+            left: $dashed-line-length;
+        }
+
+        &--top-right {
+            top: -$half-marker-size;
+            left: -$marker-size;
+        }
+
+        &--bottom-left {
+            top: -$half-marker-size;
+            left: $dashed-line-length;
+        }
+        
+        &--bottom-right {
+            top: -$half-marker-size;
+            left: -$marker-size;
+        }
+
+    }
+
+}
+
+
+
+    
+

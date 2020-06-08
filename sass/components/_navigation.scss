@@ -1,0 +1,43 @@
+.navigation {
+    margin-right: 2.5rem;
+    background-color: red;
+    padding: 5rem;
+
+    &__list {
+        display: flex;
+        list-style: none;
+    }
+
+    &__item {
+        margin-right: 2.5rem;
+        position: relative;
+        
+
+        &::after {
+            display: block;
+            content: "";
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $color-white;
+            position: absolute;
+            transition: .7s ease;
+            transform: scaleX(0);
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+}
+    
+
+    &__link,
+    &__link:link,
+    &__link1:visited {
+        //letter-spacing: .5px;
+        font-weight: 600;
+        color: $color-white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+}

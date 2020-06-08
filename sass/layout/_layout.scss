@@ -1,0 +1,307 @@
+.container {
+  width: 100%;  
+}
+
+.header {
+    background-image: url(../img/header-background.jpg);
+    background-position: bottom;
+    background-size: 100% 100%;
+
+    height: 100vh;
+    max-height: 100vh;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__top-line {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 7rem;
+        padding: 1rem 5rem 1rem 25rem;
+
+        @include respond(tab-land) { // width < 1200px
+            margin-bottom: 4rem;
+        }
+
+        @include respond(tab-port) { // width < 900px
+            padding: 1rem 5rem 1rem 15rem;
+        }
+
+        @include respond(phone) { // width < 900px
+            padding: 1rem 5rem 1rem 5rem;
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+        height: 2.5rem;
+        width: auto;
+    }
+
+    &__nav-searh-wrapper {
+        display: flex;
+    }
+
+
+
+    &__content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+
+        & > .heading-2 {
+            letter-spacing: 3px;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 300;
+        width: 100%;
+        margin-bottom: 5rem;
+        max-width: 45rem;
+    }
+
+    & > .heading-1 {
+        text-align: center;
+        line-height: 1;
+    }
+}
+
+
+.section-info {
+    display: flex;
+    justify-content: center;
+    margin-top: -7rem;
+    padding: 0 5rem 10rem 5rem;
+
+    @include respond(tab-port) { // width < 900px
+        padding: 0 5rem 5rem 5rem;
+    }
+
+    @include respond(phone) { // width < 600px
+        margin-top: 0;
+    }
+
+    &__wrapper {
+        max-width: 110rem;
+        width: 100%;
+        padding-left: 15rem;
+
+        background-image: url(../img/macbook-1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 100% 0;
+
+        @include respond(tab-land) { // width < 1200px
+            padding-left: 5rem;
+        }
+
+        @include respond(tab-port) { // width < 900px
+            background-position: bottom;
+        }
+
+        & > *:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__content {
+        max-width: 50%;
+        color: $color-grey;
+    }
+
+    &__list {
+       list-style: none;
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        color: $color-secondary;
+    }
+}
+
+.section-features {
+    padding: 10rem 20rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 27rem));
+    grid-gap: 4rem;
+    justify-content: center;
+    align-content: center;
+
+    background-color: $color-grey-light;
+
+    @include respond(tab-port) { // width < 900px
+        padding: 5rem 10rem;
+    }
+
+    &__feature {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: [col-start] 5rem [col-center] 1fr [col-end];
+        grid-template-rows: min-content min-content;
+    }
+
+    &__feature-heading {
+        
+    }
+
+    &__icon {
+        grid-area: 1 / 1 / -1 / 2;
+        fill: $color-display;
+        width: 5rem;
+        height: 5rem;
+    }
+
+    &__text {
+        color: $color-grey;
+        font-size: 1.4rem;
+    }
+}
+
+.section-check-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rem 0;
+
+    @include respond(tab-port) { // width < 900px
+        padding: 5rem 0;
+    }
+
+    &__container {
+        width: 90rem;
+        height: 40rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        //justify-content: space-between;
+
+        background-image: url(../img/macbook-2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+
+        @include respond(tab-port) { // width < 900px
+            width: 100%;
+            height: 30rem;
+            padding: 0 5rem;
+        }
+
+        @media only screen and (max-width: 46.5em){ // width < 750px - единичный случай использоавания такой точки преломления
+            padding: 0 0;
+        }; 
+
+        @include respond(phone) { // width < 900px
+            padding: 0 3rem;
+        } 
+    }
+
+}
+
+.section-plans {
+    background-color: $color-grey-light;
+    padding: 10rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(tab-port) { // width < 900px
+        padding: 5rem 5rem;
+    }
+
+    &__text {
+        color: $color-grey;
+        max-width: 90rem;
+        text-align: center;
+        line-height: 2.5rem;
+    }
+
+    &__cards-container {
+        margin-top: 5rem;
+        width: 100%;
+        width: 90;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 30rem));
+        grid-gap: 4rem;
+        justify-content: center;
+
+        margin-bottom: 5rem;
+    }
+
+    &__icon {
+        fill: $color-display;
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    & > .heading-thin {
+        margin-bottom: 2rem;
+    }
+
+    & > .support-contacts {
+        margin-top: 5rem;
+    }
+}
+
+.footer {
+    background-image: url(../img/footer-background.jpg);
+    background-position: bottom;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+    max-height: 100vh;
+    
+    padding-top: 10rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(tab-port) { // width < 900px
+        padding: 5rem 5rem;
+    }
+
+
+    &__content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+
+        & > .heading-2 {
+            
+            color: $color-display;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 1.2rem;
+        color: $color-grey;
+        font-weight: 300;
+        width: 100%;
+        margin-bottom: 5rem;
+        max-width: 75rem;
+    }
+
+    & > * .btn {
+        margin-bottom: auto;
+    }
+
+    &__copy-text {
+        font-size: 1.4rem;
+        color: $color-grey;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,25 @@
+.support-contacts {
+    display: flex;
+
+    &__contact-box {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-right: 5rem;
+        }
+    }
+    
+    &__contact-icon {
+        fill: $color-display;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+    }
+
+    &__contact-text {
+        color: $color-display;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+}
